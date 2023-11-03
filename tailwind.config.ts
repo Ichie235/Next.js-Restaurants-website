@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss'
-import daisyui from "daisyui";
+import type { Config } from 'tailwindcss';
+import daisyui from 'daisyui';
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -16,10 +16,11 @@ const config: Config = {
       colors: {
         'res-blue': '#78909C',
         'res-green': '#00302E',
-
+        'res-gray': '#F4F5F7',
+        'res-gray-lite': '#EEEFF4',
       },
     },
   },
-  plugins: [require("daisyui")],
-}
-export default config
+  plugins: [require('daisyui')],
+};
+export default config;

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
+// import Navbar from '@/app/Navbar/Navbar'
 
 export default function LoginPage() {
   const [password, setPassword] = useState<string>('');
@@ -11,6 +12,7 @@ export default function LoginPage() {
   };
   return (
     <div className="">
+        {/* <Navbar/> */}
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
