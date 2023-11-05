@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
+import Navbar from '../Navbar/Navbar';
+import SignUpButton from '../Navbar/signUpButton';
 
 export default function LoginPage() {
   const [password, setPassword] = useState<string>('');
@@ -11,6 +13,9 @@ export default function LoginPage() {
   };
   return (
     <div className="">
+      <Navbar>
+        <SignUpButton />
+      </Navbar>
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
@@ -86,7 +91,7 @@ export default function LoginPage() {
                 />
                 <button
                   type="button"
-                  className="absolute top-[1.1rem] right-[1.6rem]"
+                  className="absolute top-[1.1rem] right-[1.6rem] "
                   onClick={togglePasswordVisibility}
                 >
                   {showPassword ? 'Hide' : 'Show'}

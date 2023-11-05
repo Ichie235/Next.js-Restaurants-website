@@ -21,7 +21,7 @@ export default function SubmitButton({
   return (
     <button 
       {...props}
-      className={`btn bg-res-green w-full ${className}`}
+      className={`btn bg-res-green w-full hover:bg-green-900 text-[#FBDDBB] ${className}`}
       style={style}
       type="submit"
       // disabled={pending}

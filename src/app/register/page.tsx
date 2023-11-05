@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
-// import Navbar from '@/app/Navbar/Navbar'
+import Navbar from '../Navbar/Navbar';
+import LoginButton from '../Navbar/loginButton';
 
 export default function LoginPage() {
   const [password, setPassword] = useState<string>('');
@@ -12,21 +13,31 @@ export default function LoginPage() {
   };
   return (
     <div className="">
-        {/* <Navbar/> */}
+      <Navbar>
+        <LoginButton />
+      </Navbar>
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
         <div className="relative w-screen h-screen bg-cover  bg-center bg-[url('/assets/register-banner.png')]">
           {/* Login Form Modal */}
 
-          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[8rem] h-auto bg-white px-11 py-5 rounded-lg shadow-lg">
+          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[14rem] h-auto bg-white px-11 py-5 rounded-lg shadow-lg">
             <h1 className="text-center text-2xl font-semibold mt-8 mb-8 text-res-green">
               Welcome to Lilies!
             </h1>
             <form>
-              <div className="mb-8">
+            <div className="mb-8">
                 <input
                   type="text"
+                  placeholder="Your First Name"
+                  className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
+                  required
+                />
+              </div>
+              <div className="mb-8">
+                <input
+                  type="email"
                   placeholder="Your Email address"
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
                   required
