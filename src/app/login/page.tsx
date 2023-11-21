@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
-import Navbar from '../Navbar/Navbar';
-import SignUpButton from '../Navbar/signUpButton';
+import Navbar from '../../components/Navbar/Navbar';
+import SignUpButton from '../../components/Navbar/signUpButton';
+import FormInput from '@/components/FormInput/FormInput';
 
 export default function LoginPage() {
   const [password, setPassword] = useState<string>('');
@@ -28,21 +29,24 @@ export default function LoginPage() {
             </h1>
             <form>
               <div className="mb-8">
-                <input
+                <FormInput
                   type="email"
+                  name="email"
+                  title=""
                   placeholder="Your Email address"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
-                  required
                 />
               </div>
               <div className="mb-8">
-                <input
+                <FormInput
                   type={showPassword ? 'text' : 'password'}
-                  value={password}
+                  name="password"
+                  title=""
                   placeholder="Your Password"
                   onChange={(e) => setPassword(e.target.value)}
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
-                  required
                 />
               </div>
               <button
@@ -73,21 +77,24 @@ export default function LoginPage() {
             </h1>
             <form>
               <div className="mb-4">
-                <input
-                  type="text"
+                <FormInput
+                  type="email"
+                  name="email"
+                  title=""
                   placeholder="Your Email address"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-[480px] h-[60px]"
-                  required
                 />
               </div>
-              <div className="my-10 relative">
-                <input
+              <div className="my-10 relative  w-[480px] h-[60px]">
+                <FormInput
                   type={showPassword ? 'text' : 'password'}
-                  value={password}
+                  name="password"
+                  title=""
                   placeholder="Your Password"
                   onChange={(e) => setPassword(e.target.value)}
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-[480px] h-[60px]"
-                  required
                 />
                 <button
                   type="button"

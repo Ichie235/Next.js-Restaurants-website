@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
-import Navbar from '../Navbar/Navbar';
-import LoginButton from '../Navbar/loginButton';
+import Navbar from '../../components/Navbar/Navbar';
+import LoginButton from '../../components/Navbar/loginButton';
+import FormInput from '@/components/FormInput/FormInput';
 
 export default function LoginPage() {
   const [password, setPassword] = useState<string>('');
@@ -19,38 +20,43 @@ export default function LoginPage() {
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
-        <div className="relative w-screen h-screen bg-cover  bg-center bg-[url('/assets/register-banner.png')]">
+        <div className="relative w-screen h-[120vh] bg-cover  bg-center bg-[url('/assets/register-banner.png')]">
           {/* Login Form Modal */}
 
-          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[14rem] h-auto bg-white px-11 py-5 rounded-lg shadow-lg">
+          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[12rem] h-auto bg-white px-11 py-5 rounded-lg shadow-lg">
             <h1 className="text-center text-2xl font-semibold mt-8 mb-8 text-res-green">
               Welcome to Lilies!
             </h1>
             <form>
-            <div className="mb-8">
-                <input
+              <div className="mb-8">
+                <FormInput
                   type="text"
-                  placeholder="Your First Name"
+                  name="name"
+                  title=""
+                  placeholder="Your Name"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
-                  required
                 />
               </div>
               <div className="mb-8">
-                <input
+                <FormInput
                   type="email"
+                  name="email"
+                  title=""
                   placeholder="Your Email address"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
-                  required
                 />
               </div>
               <div className="mb-8 relative">
-                <input
+                <FormInput
                   type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  placeholder="Your Password"
+                  name="password"
+                  title=""
+                  placeholder="Your Email address"
+                  value={''}
                   onChange={(e) => setPassword(e.target.value)}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-full h-[45px]"
-                  required
                 />
                 <button
                   type="button"
@@ -73,7 +79,7 @@ export default function LoginPage() {
 
       {/* LAPTOP / DESKTOP VIEW */}
       <div className="hidden lg:flex">
-        <div className="w-1/2 h-screen  bg-cover bg-center bg-[url('/assets/register-banner.png')]"></div>
+        <div className="w-1/2 h-[105vh]  bg-cover bg-center bg-[url('/assets/register-banner.png')]"></div>
 
         <div className="w-1/2 flex justify-center bg-white ">
           <div className="mt-36 ">
@@ -82,29 +88,34 @@ export default function LoginPage() {
             </h1>
             <form>
               <div className="mb-4">
-                <input
+                  <FormInput
                   type="text"
-                  placeholder="Your First Name"
+                  name="name"
+                  title=""
+                  placeholder="Your Name"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-[480px] h-[60px]"
-                  required
                 />
               </div>
               <div className="my-10">
-                <input
+                  <FormInput
                   type="email"
+                  name="email"
+                  title=""
                   placeholder="Your Email address"
+                  value={''}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-[480px] h-[60px]"
-                  required
                 />
               </div>
-              <div className="my-10 relative">
-                <input
+              <div className="my-10 relative w-[480px] h-[60px]">
+                 <FormInput
                   type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  placeholder="Your Password"
+                  name="password"
+                  title=""
+                  placeholder="Your Email address"
+                  value={''}
                   onChange={(e) => setPassword(e.target.value)}
                   className="border-2 border-gray-300 bg-white rounded-md p-2 focus:bg-white w-[480px] h-[60px]"
-                  required
                 />
                 <button
                   type="button"
