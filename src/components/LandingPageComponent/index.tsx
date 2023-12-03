@@ -3,7 +3,7 @@ import FormInput from '../FormInput/FormInput';
 import SubmitButton from '../submitButton';
 export default function LandingPage() {
   return (
-    <div className="bg-res-green lg:px-5 overflow-hidden">
+    <div className="bg-res-green md:px-5 lg:px-5 overflow-hidden">
       {/* Hero  */}
       <div className="flex flex-col items-center gap-9 p-8 lg:flex-row-reverse lg:gap-16 xl:gap-[17rem]">
         {/* Hero Image */}
@@ -12,7 +12,7 @@ export default function LandingPage() {
             src="/assets/bon-vivant-meal.png"
             width={250}
             height={250}
-            className="md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] "
+            className="md:w-96 md:h-80 lg:w-[400px] lg:h-[400px] "
             alt="hero image"
           />
         </div>
@@ -21,7 +21,7 @@ export default function LandingPage() {
             Order <span className="text-res-orange-lite">food</span> anytime,
             anywhere
           </h2>
-          <p className="text-res-gray text-base text-center font-extralight mt-6 lg:w-[609px] lg:px-8 lg:text-lg lg:text-left">
+          <p className="text-res-gray text-base text-center font-extralight mt-6 md:px-9 lg:w-[609px] lg:px-8 lg:text-lg lg:text-left">
             Browse from our list of specials to place your order and have food
             delivered to you in no time. Affordable, tasty and fast!
           </p>
@@ -54,12 +54,12 @@ export default function LandingPage() {
           <h2 className="text-center text-res-gray text-xl font-semibold lg:text-4xl ">
             Special Meals of the day!
           </h2>
-          <p className=" text-res-gray text-sm font-extralight mt-3 px-6 lg:w-[609px] lg:text-lg lg:text-center">
+          <p className=" text-res-gray text-sm font-extralight mt-3 px-6 md:px-14 md:text-center lg:w-[609px] lg:text-lg lg:text-center">
             Check our sepecials of the day and get discounts on all our meals
             and swift delivery to what ever location within Ilorin.
           </p>
         </div>
-        <div className="flex flex-col gap-6 lg:mt-16 lg:flex-row lg:gap-32 xl:gap-56">
+        <div className="flex flex-col gap-6 md:mt-10 md:grid md:grid-cols-3 lg:mt-16 lg:flex-row lg:gap-32 xl:gap-56">
           <div className="flex flex-col items-center">
             {' '}
             <Image
@@ -72,7 +72,7 @@ export default function LandingPage() {
               <h3 className="text-res-orange-lite text-center my-2 font-semibold">
                 Stir fry Pasta
               </h3>
-              <p className="text-res-gray text-center font-extralight px-14 lg:w-[288px]">
+              <p className="text-res-gray text-center font-extralight px-14 md:px-10 lg:w-[288px]">
                 Stir fry pasta yada yada yada because of Sesan
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function LandingPage() {
               <h3 className="text-res-orange-lite text-center my-2 font-semibold">
                 Meat Balls
               </h3>
-              <p className="text-res-gray text-center font-extralight px-14 lg:w-[288px]">
+              <p className="text-res-gray text-center font-extralight px-14 md:px-10  lg:w-[288px]">
                 Meat balls yada yada yada because of Sesan
               </p>
             </div>
@@ -106,7 +106,7 @@ export default function LandingPage() {
               <h3 className="text-res-orange-lite text-center my-2 font-semibold">
                 Burger Meal
               </h3>
-              <p className="text-res-gray text-center font-extralight px-14 lg:w-[288px]">
+              <p className="text-res-gray text-center font-extralight px-14 md:px-10  lg:w-[288px]">
                 Burger meal yada yada yada because of Sesan
               </p>
             </div>
@@ -115,26 +115,26 @@ export default function LandingPage() {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col items-center mt-12 lg:flex-row lg:justify-center lg:px-2 lg:my-28 lg:gap-14 xl:gap-56">
+      <div className="flex flex-col items-center mt-12 lg:flex-row lg:justify-center lg:px-2 lg:my-28 lg:gap-5 xl:gap-56">
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-res-orange-lite font-bold text-xl text-center lg:text-4xl lg:w-[549px]">
             {' '}
             Get notified when we update!
           </h3>
-          <p className="text-res-gray px-6 font-extralight lg:w-[513px] lg:text-lg">
+          <p className="text-res-gray px-6 font-extralight md:px-14 lg:w-[513px] lg:text-lg">
             {' '}
             Get notified when we add new items to our specials menu, update our
             price list of have promos!
           </p>
         </div>
-        <div className='flex justify-center lg:gap-2 mt-6 mb-10'>
+        <div className='flex justify-center md:gap-9 lg:gap-2 mt-6 mb-10'>
           <FormInput
             type="email"
             name="email"
             title=""
             placeholder="gregphillips@gmail.com"
             value={''}
-            className="border-2 border-gray-300 bg-white rounded-md py-2 px-4  focus:bg-white w-[85%] h-[40px] lg:w-[288px]"
+            className="border-2 border-gray-300 bg-white rounded-md py-2 px-4  focus:bg-white w-[85%] h-[40px] md:w-[220px] lg:w-[280px]"
           />
             <SubmitButton className='bg-res-orange-lite text-res-green normal-case w-fit h[20px] -ml-8 lg:ml-0'>Get notified</SubmitButton>
         </div>
