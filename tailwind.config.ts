@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 import daisyui from 'daisyui';
-const withMT = require("@material-tailwind/react/utils/withMT");
+const withMT = require('@material-tailwind/react/utils/withMT');
 const config: Config = withMT({
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,6 +19,7 @@ const config: Config = withMT({
         'res-green': '#00302E',
         'res-gray': '#F4F5F7',
         'res-gray-lite': '#EEEFF4',
+        'res-orange-lite': '#FBDDBB',
       },
     },
   },
