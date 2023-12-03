@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
-import Navbar from '../../components/Navbar/Navbar';
-import LoginButton from '../../components/Navbar/loginButton';
 import FormInput from '@/components/FormInput/FormInput';
 
 export default function LoginPage() {
@@ -14,9 +12,6 @@ export default function LoginPage() {
   };
   return (
     <div className="">
-      <Navbar>
-        <LoginButton />
-      </Navbar>
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
@@ -88,7 +83,7 @@ export default function LoginPage() {
             </h1>
             <form>
               <div className="mb-4">
-                  <FormInput
+                <FormInput
                   type="text"
                   name="name"
                   title=""
@@ -98,7 +93,7 @@ export default function LoginPage() {
                 />
               </div>
               <div className="my-10">
-                  <FormInput
+                <FormInput
                   type="email"
                   name="email"
                   title=""
@@ -108,7 +103,7 @@ export default function LoginPage() {
                 />
               </div>
               <div className="my-10 relative w-[480px] h-[60px]">
-                 <FormInput
+                <FormInput
                   type={showPassword ? 'text' : 'password'}
                   name="password"
                   title=""

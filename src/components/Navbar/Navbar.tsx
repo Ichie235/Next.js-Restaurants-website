@@ -1,36 +1,60 @@
 'use client';
 import React from 'react';
-import {
-  Collapse,
-  Typography,
-  IconButton,
-  Navbar,
-} from '@material-tailwind/react';
+import { usePathname } from 'next/navigation';
+import { Collapse, IconButton } from '@material-tailwind/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface NavbarSimpleProps {
-  children: React.ReactNode;
-}
-
-function NavList() {
+function NavList({
+  isLogin,
+  isRegister,
+}: {
+  isLogin: boolean;
+  isRegister: boolean;
+}) {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography as="li" variant="small" className="p-1 font-medium text-xl">
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-7 ">
+      <li className="p-1 font-medium text-xl ">
         <Link
-          href="/home"
-          className=" flex items-center text-[#FBDDBB] hover:text-orange-400 transition-colors "
+          href="/"
+          className="text-[#FBDDBB] hover:text-orange-400 transition-colors "
         >
           Home
         </Link>
-      </Typography>
+      </li>
+      <li className="p-1 font-medium text-xl ">
+        <Link
+          href="/login"
+          className={`text-white text-center hover:text-orange-400 transition-colors font-medium text-xl ${
+            isLogin ? 'hidden' : '' // Hide "Login" link when on the login page
+          }`}
+        >
+          {' '}
+          Login
+        </Link>
+      </li>
+      <li className="p-1 font-medium text-xl ">
+        <Link href="/register">
+          {' '}
+          <button
+            className={`btn bg-[#E2B887] text-res-green w-[200px]  md:w-[250px] lg:w-[140px] h-[50px] hover:bg-[#E2B887] ${
+              isRegister ? 'hidden' : ''
+            }`}
+          >
+            Sign Up
+          </button>
+        </Link>
+      </li>
     </ul>
   );
 }
 
-export default function NavbarSimple({ children }: NavbarSimpleProps) {
+export default function NavbarSimple() {
   const [openNav, setOpenNav] = React.useState(false);
+  const pathname = usePathname();
+  const isLogin = pathname === '/login';
+  const isRegister = pathname === '/register';
 
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
@@ -44,9 +68,9 @@ export default function NavbarSimple({ children }: NavbarSimpleProps) {
   }, []);
 
   return (
-    <div className="z-40 fixed top-0 w-full shadow-md bg-res-green text-white px-12 lg:px-16 py-3">
+    <div className="z-40 fixed top-0 w-full  bg-res-green text-white px-12 lg:px-16 pt-7">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Link href="/home">
+        <Link href="/">
           <div className="flex items-center gap-3 cursor-pointer ">
             {' '}
             <Image
@@ -58,9 +82,9 @@ export default function NavbarSimple({ children }: NavbarSimpleProps) {
             <h2 className="font-bold text-white text-2xl">Lilies</h2>
           </div>
         </Link>
-        <div className="hidden  lg:flex justify-between items-center gap-7">
-          <NavList />
-          {children}
+        <div className="hidden  lg:flex flex-row justify-between items-center gap-2">
+          <NavList isLogin={isLogin} isRegister={isRegister} />
+          {/* {children} */}
         </div>
         <IconButton
           variant="text"
@@ -76,9 +100,9 @@ export default function NavbarSimple({ children }: NavbarSimpleProps) {
         </IconButton>
       </div>
       <Collapse open={openNav}>
-        <div className="py-6 relative">
-          <NavList />
-          <div className="mt-5 ml-1">{children}</div>
+        <div className="py-6 relative text-center flex flex-col items-center ">
+          <NavList isLogin={isLogin} isRegister={isRegister} />
+          {/* <div className="mt-5 ml-1">{children}</div> */}
         </div>
       </Collapse>
     </div>

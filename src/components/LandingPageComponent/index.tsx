@@ -3,9 +3,9 @@ import FormInput from '../FormInput/FormInput';
 import SubmitButton from '../submitButton';
 export default function LandingPage() {
   return (
-    <div className="bg-res-green md:px-5 lg:px-5 overflow-hidden">
+    <div className="bg-res-green pt-28 lg:pt-12 md:px-5 lg:px-5 overflow-hidden">
       {/* Hero  */}
-      <div className="flex flex-col items-center gap-9 p-8 lg:flex-row-reverse lg:gap-16 xl:gap-[17rem]">
+      <div className="flex flex-col items-center gap-9 p-8 md:h-[75vh] lg:flex-row-reverse lg:gap-16 xl:gap-[17rem] lg:h-screen">
         {/* Hero Image */}
         <div className="lg:flex-grow lg:w-3/5">
           <Image
@@ -17,7 +17,7 @@ export default function LandingPage() {
           />
         </div>
         <div className='lg:flex-shrink'>
-          <h2 className="text-white text-4xl text-center lg:text-6xl  lg:w-[650px]">
+          <h2 className="text-white text-4xl text-center lg:text-6xl  lg:w-[650px] lg:text-left lg:px-8 ">
             Order <span className="text-res-orange-lite">food</span> anytime,
             anywhere
           </h2>
@@ -49,7 +49,7 @@ export default function LandingPage() {
       </div>
 
       {/* section 2  */}
-      <div className="flex flex-col items-center mt-7 lg:mt-16">
+      <div className="flex flex-col items-center mt-7 lg:mt-16 lg:h-[75vh]">
         <div>
           <h2 className="text-center text-res-gray text-xl font-semibold lg:text-4xl ">
             Special Meals of the day!
@@ -115,13 +115,13 @@ export default function LandingPage() {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col items-center mt-12 lg:flex-row lg:justify-center lg:px-2 lg:my-28 lg:gap-5 xl:gap-56">
+      <div className="flex flex-col items-center  lg:flex-row lg:justify-center lg:px-2 lg:my-28 lg:gap-5 xl:gap-56">
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-res-orange-lite font-bold text-xl text-center lg:text-4xl lg:w-[549px]">
             {' '}
             Get notified when we update!
           </h3>
-          <p className="text-res-gray px-6 font-extralight md:px-14 lg:w-[513px] lg:text-lg">
+          <p className="text-res-gray px-6 font-extralight md:px-14 lg:w-[513px] lg:text-lg lg:px-0">
             {' '}
             Get notified when we add new items to our specials menu, update our
             price list of have promos!

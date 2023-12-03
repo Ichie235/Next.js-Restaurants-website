@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SubmitButton from '@/components/submitButton';
-import Navbar from '../../components/Navbar/Navbar';
-import SignUpButton from '../../components/Navbar/signUpButton';
 import FormInput from '@/components/FormInput/FormInput';
 
 export default function LoginPage() {
@@ -14,9 +12,8 @@ export default function LoginPage() {
   };
   return (
     <div className="">
-      <Navbar>
-        <SignUpButton />
-      </Navbar>
+      {/* <SignUpButton /> */}
+
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
