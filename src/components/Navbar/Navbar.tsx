@@ -27,7 +27,7 @@ function NavList({
         <Link
           href="/login"
           className={`text-white text-center hover:text-orange-400 transition-colors font-medium text-xl ${
-            isLogin ? 'hidden' : '' // Hide "Login" link when on the login page
+            isLogin ? 'hidden' : ''
           }`}
         >
           {' '}
@@ -66,25 +66,32 @@ export default function NavbarSimple() {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, []);
-
+  React.useEffect(() => {
+    setOpenNav(false);
+  }, [pathname]);
+  const isTransparentBackground = isLogin || isRegister;
   return (
-    <div className="z-40 fixed top-0 w-full  bg-res-green text-white px-12 lg:px-16 pt-7">
-      <div className="flex items-center justify-between text-blue-gray-900">
+    <div
+      className={`z-40 fixed top-0 w-full text-white px-12 lg:px-16 pt-5 ${
+        isTransparentBackground ? 'bg-res-green bg-opacity-70' : 'bg-res-green'
+      }`}
+    >
+      <div className="flex pb-5 items-center justify-between text-blue-gray-900">
         <Link href="/">
-          <div className="flex items-center gap-3 cursor-pointer ">
+          <div className="flex items-center gap-3  cursor-pointer -ml-5 md:ml-2 ">
             {' '}
             <Image
               src="/assets/restaurant-logo.png"
               alt="company logo"
               width={56}
               height={66}
+              className="w-10 h-11 md:w-14 md:h-16"
             />
             <h2 className="font-bold text-white text-2xl">Lilies</h2>
           </div>
         </Link>
         <div className="hidden  lg:flex flex-row justify-between items-center gap-2">
           <NavList isLogin={isLogin} isRegister={isRegister} />
-          {/* {children} */}
         </div>
         <IconButton
           variant="text"
@@ -102,7 +109,6 @@ export default function NavbarSimple() {
       <Collapse open={openNav}>
         <div className="py-6 relative text-center flex flex-col items-center ">
           <NavList isLogin={isLogin} isRegister={isRegister} />
-          {/* <div className="mt-5 ml-1">{children}</div> */}
         </div>
       </Collapse>
     </div>

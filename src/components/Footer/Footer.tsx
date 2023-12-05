@@ -1,9 +1,14 @@
 import Image from 'next/image';
 
 export default function Footer() {
+  const socialMediaIcons = [
+    { src: '/assets/icons/instagram-icon.png', alt: 'instagram icon' },
+    { src: '/assets/icons/twitter-icon.svg', alt: 'twitter icon' },
+    { src: '/assets/icons/youtube.svg', alt: 'youtube icon' },
+  ];
   return (
     <>
-      <footer className="footer p-10 bg-base-200  text-res-gray-lite lg:justify-around">
+      <footer className="footer p-10 bg-base-200  text-res-gray-lite lg:justify-around pb-24">
         <nav>
           <header className="footer-title text-res-gray font-medium">
             Company
@@ -52,36 +57,27 @@ export default function Footer() {
           </a>
         </nav>
       </footer>
-      <footer className="footer pl-44 pr-32 py-4 border-t bg-base-200 text-base-content border-base-300 lg:h-[80px]">
-        <aside className="items-center grid-flow-col">
+
+      <hr className='border border-gray-700' />
+
+      <footer className="footer footer-center p-5 bg-base-200 text-base-content  rounded">
+        <aside>
           <p>© 2021 LILIES, All rights reserved</p>
         </aside>
-        <nav className="md:place-self-center md:justify-self-end">
+
+        <nav>
           <div className="grid grid-flow-col gap-4">
-            <a>
-              <Image
-                src="/assets/icons/instagram-icon.png"
-                alt="instagram icon"
-                width={28}
-                height={28}
-              />
-            </a>
-            <a>
-              <Image
-                src="/assets/icons/twitter-icon.svg"
-                alt="twitter icon"
-                width={28}
-                height={28}
-              />
-            </a>
-            <a>
-              <Image
-                src="/assets/icons/youtube.svg"
-                alt="youtube icon"
-                width={28}
-                height={28}
-              />
-            </a>
+            {socialMediaIcons.map((icon, index) => (
+              <a key={index}>
+                <Image
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={15}
+                  height={15}
+                  className="w-6 h-6"
+                />
+              </a>
+            ))}
           </div>
         </nav>
       </footer>

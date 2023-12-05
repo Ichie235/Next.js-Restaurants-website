@@ -72,7 +72,7 @@ export default function LandingPage() {
           <h2 className="text-center text-res-gray text-xl font-semibold lg:text-4xl ">
             Special Meals of the day!
           </h2>
-          <p className=" text-res-gray text-sm font-extralight mt-3 px-6 md:px-14 md:text-center lg:w-[609px] lg:text-lg lg:text-center">
+          <p className=" text-res-gray text-sm font-extralight mt-3 px-6 md:px-16  md:text-center lg:w-[609px] lg:text-lg lg:text-center">
             Check our sepecials of the day and get discounts on all our meals
             and swift delivery to what ever location within Ilorin.
           </p>
@@ -100,28 +100,28 @@ export default function LandingPage() {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col items-center mt-14 md:mt-20 lg:flex-row lg:justify-center lg:px-2 lg:my-28 lg:gap-5 xl:gap-56">
-        <div className="flex flex-col items-center gap-4">
-          <h3 className="text-res-orange-lite font-bold text-xl text-center lg:text-4xl lg:w-[549px]">
+      <div className="flex flex-col items-center mt-14 md:mt-20 md:gap-0   lg:flex-row lg:justify-around lg:mr-16  lg:my-28 xl:gap-56">
+        <div className="flex flex-col gap-4 px-8">
+          <h3 className="text-res-orange-lite font-bold text-xl text-center lg:text-3xl lg:w-[549px]">
             {' '}
             Get notified when we update!
           </h3>
-          <p className="text-res-gray text-center px-6 font-extralight md:px-14 lg:w-[513px] lg:text-lg lg:px-0">
+          <p className="text-res-gray text-center px-6 font-extralight md:px-16 md:text-sm lg:px-12 lg:text-lg ">
             {' '}
             Get notified when we add new items to our specials menu, update our
             price list of have promos!
           </p>
         </div>
-        <div className="flex justify-center md:gap-9 lg:gap-2 mt-6 mb-10">
+        <div className="flex justify-between gap-2  mt-6 mb-10">
           <FormInput
             type="email"
             name="email"
             title=""
             placeholder="gregphillips@gmail.com"
             value={''}
-            className="border-2 border-gray-300 bg-white rounded-md py-2 px-4  focus:bg-white w-[85%] h-[40px] md:w-[220px] lg:w-[280px]"
+            className="border-2 border-gray-300 bg-white rounded-md py-2 px-4  focus:bg-white w-[190px] h-[40px] md:w-[220px] lg:w-[220px]"
           />
-          <SubmitButton className="bg-res-orange-lite text-res-green normal-case w-fit h[20px] -ml-8 lg:ml-0">
+          <SubmitButton className="bg-res-orange-lite text-res-green text-center normal-case  w-[100px] h-[25px] md:w-[150px] md:h-[25px] lg:ml-0">
             Get notified
           </SubmitButton>
         </div>

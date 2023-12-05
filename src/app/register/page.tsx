@@ -15,10 +15,10 @@ export default function LoginPage() {
       {/* For Mobile/Tablet  */}
       <div className="lg:hidden">
         {/* Background Image */}
-        <div className="relative w-screen h-[120vh] bg-cover  bg-center bg-[url('/assets/register-banner.png')]">
+        <div className="relative w-screen h-[100vh] bg-cover  bg-center bg-[url('/assets/register-banner.png')]">
           {/* Login Form Modal */}
 
-          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[12rem] h-auto bg-white px-11 py-5 rounded-lg shadow-lg">
+          <div className="absolute w-[90%] left-0 right-0 mx-auto mt-[12rem] h-auto bg-white px-8 py-5 rounded-lg shadow-lg">
             <h1 className="text-center text-2xl font-semibold mt-8 mb-8 text-res-green">
               Welcome to Lilies!
             </h1>
@@ -64,9 +64,13 @@ export default function LoginPage() {
 
               <SubmitButton>Sign Up</SubmitButton>
             </form>
-            <div className="flex justify-between my-6 text-res-green font-semibold text-sm">
-              <Link href="/register">create an account</Link>
-              <Link href="/forgot-password">forgot password</Link>
+            <div className="flex justify-center my-6 text-res-green">
+              <p>
+                {' '}
+                Already have an account. <Link href="/login" className='font-bold'>
+                  LOGIN
+                </Link>{' '}
+              </p>
             </div>
           </div>
         </div>
@@ -122,9 +126,13 @@ export default function LoginPage() {
               </div>
               <SubmitButton>Sign Up</SubmitButton>
             </form>
-            <div className="flex justify-between my-6 text-res-green">
-              <Link href="/register">create an account</Link>
-              <Link href="/forgot-password">forgot password</Link>
+            <div className="flex justify-center my-6 text-res-green">
+              <p>
+                {' '}
+                Already have an account. <Link href="/login" className='font-bold'>
+                  LOGIN
+                </Link>{' '}
+              </p>
             </div>
           </div>
         </div>
